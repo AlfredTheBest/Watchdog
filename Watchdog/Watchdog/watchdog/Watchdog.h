@@ -16,11 +16,24 @@
  
  @param threshold the time interval for watching.
  
- @param strict customize reaction.
+ @param strict mode with the designed action.
 
  @return An initialized watch dog, actively monitoring the main thread.
  */
 - (instancetype)initWithThreshold:(double)threshold
                     andStrictMode:(BOOL) strict;
+
+
+/**
+ Initializes an instance of a watch dog to keep monitoring main thread.
+ 
+ @param threshold the time interval for watching.
+ 
+ @param strict customize reaction.
+ 
+ @return An initialized watch dog, actively monitoring the main thread.
+ */
+- (instancetype)initWithThreshold:(double)threshold
+                 andFiredCallback:(block)handler;
 
 @end

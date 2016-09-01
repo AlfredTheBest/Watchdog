@@ -87,6 +87,8 @@ typedef void (^block)(void);
                     andStrictMode:(BOOL)strict
 {
     self =  [self initWithThreshold:threshold andFiredCallback:^{
+        
+        // customize the react with strict mode or not
         if (strict) {
             NSCAssert(0, @"the main thread has been blcoked");
         } else {

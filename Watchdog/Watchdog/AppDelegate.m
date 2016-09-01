@@ -18,8 +18,9 @@
 @implementation AppDelegate
 
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+{
+    // init a watch dog 
     Watchdog *dog = [[Watchdog alloc] initWithThreshold:4.0 andStrictMode:YES];
 
     // Override point for customization after application launch.
