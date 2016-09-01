@@ -25,7 +25,8 @@ typedef void (^block)(void);
 
 @implementation PingThread
 
-- (instancetype)initWithThreshold:(double)threshold andHandler:(block)handler
+- (instancetype)initWithThreshold:(double)threshold
+                       andHandler:(block)handler
 {
     self = [super init];
     if (self) {
@@ -68,7 +69,8 @@ typedef void (^block)(void);
 
 @implementation Watchdog
 
-- (instancetype)initWithThreshold:(double)threshold andFiredCallback:(block)handler
+- (instancetype)initWithThreshold:(double)threshold
+                 andFiredCallback:(block)handler
 {
     if (self = [super init]) {
         self.pingThread = [[PingThread alloc] initWithThreshold:4.0 andHandler:handler];
@@ -81,7 +83,8 @@ typedef void (^block)(void);
     return self;
 }
 
-- (instancetype)initWithThreshold:(double)threshold andStrictMode:(BOOL)strict
+- (instancetype)initWithThreshold:(double)threshold
+                    andStrictMode:(BOOL)strict
 {
     self =  [self initWithThreshold:threshold andFiredCallback:^{
         if (strict) {

@@ -10,6 +10,16 @@
 
 @interface Watchdog : NSObject
 
+
+/**
+ Initializes an instance of a watch dog to keep monitoring main thread.
+ 
+ @param threshold the time interval for watching.
+ 
+ @param strict customize reaction.
+
+ @return An initialized watch dog, actively monitoring the main thread.
+ */
 - (instancetype)initWithThreshold:(double)threshold
                     andStrictMode:(BOOL) strict;
 
